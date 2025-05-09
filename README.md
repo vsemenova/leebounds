@@ -7,16 +7,19 @@ This replication package contains files that implement sharp bounds on treatment
 
 ```
 ######### Compute basic Lee (2009) bounds for ATE in week 208 #########
-leedata=data.frame(treat=JobCorps_baseline$TREATMNT.y,selection=JobCorps_employment$week_208,outcome=JobCorps_wages$week_208)
-GetBounds(leebounds(leedata))
+Lee_data<-read.csv(paste0(my_path,"/JobCorps/Derived_Data/dataLee2009.csv"))
+week<-90
+baseline_varnames<-c("FEMALE","AGE","BLACK","HISP","OTHERRAC",
+                     "MARRIED","TOGETHER","SEPARATED","HASCHLD","NCHLD","HGC","HGC_MOTH","HGC_FATH","EVARRST",
+                     "HH_INC2","HH_INC3","HH_INC4","HH_INC5",
+                     "PERS_INC2","PERS_INC3","PERS_INC4", "CURRJOB.y", "MOSINJOB", "YR_WORK", "EARN_YR","HRSWK_JR",
+                     "WKEARNR")
+leedata_cov<-prepare_leedata(week=week,Lee_data,covariate_data = Lee_data[,baseline_varnames])
+GetBounds(leebounds(leedata_cov))
 ```
 
 ### Example of generalized Lee Bounds
-```
-######### Compute basic Lee (2009) bounds for ATE in week 208 #########
-leedata=data.frame(treat=JobCorps_baseline$TREATMNT.y,selection=JobCorps_employment$week_208,outcome=JobCorps_wages$week_208)
-
-### STEP1:  main arguments
+```### STEP1:  main arguments
 Lee_data<-read.csv(paste0(my_path,"/JobCorps/Derived_Data/dataLee2009.csv"))
 
 week<-90

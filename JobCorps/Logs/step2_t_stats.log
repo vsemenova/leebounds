@@ -1,0 +1,24 @@
+week 60-89: 2.39003 
+week 90-116: 2.536488 
+week 117-152: 2.690185 
+week 153-186: 3.303636 
+week 187-208: 2.221447 
+[1] 71
+[1] 63
+[1] "Number of Bootstrap Repetitions"
+[1] "Number of Boot rep ..."
+[1] 1000
+[1] "Conf Level ..."
+[1] 0.05
+[1] "Basic Lee Bounds"
+[1] 0.04765546 0.04881865
+[1] "Always-takers' share"
+[1] 0.9997368
+[1] "Confidence region for Basic Bounds"
+lower_bound upper_bound 
+ 0.01199305  0.08680522 
+[1] "Discrete Lee Bounds"
+[1] 0.04567746 0.05462149
+[1] "Confidence Region for Discrete Lee Bounds"
+lower_bound upper_bound 
+ 0.01469490  0.08720453 
